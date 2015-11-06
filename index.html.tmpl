@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/vendor/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="/static/style.css" rel="stylesheet" type="text/css" />
+    <script src="/vendor/mui.min.js"></script>
+  </head>
+  <body>
+    <header class="mui-appbar mui--z1">
+      <div class="mui-container">
+        <table width="100%">
+          <tr class="mui--appbar-height">
+            <td class="mui--text-title">Sandstorm Quick SPK Hoster</td>
+          </tr>
+        </table>
+      </div>
+    </header>
+    <div id="content-wrapper" class="mui--text-center">
+      <div class="mui--appbar-height"></div>
+      <br>
+      <br>
+      <div class="mui--text-display3">Install the app below</div>
+      <br>
+      <br>
+      <a id="oasis-install" href="" class="mui-btn mui-btn--raised">Install on Oasis</a>
+      <div class="mui--text-display1">or</div>
+      <a href="/SPK_PACKAGE_NAME" class="mui-btn mui-btn--raised">Download the spk</a>
+    </div>
+    <footer>
+      <div class="mui-container mui--text-center mui--text-bottom">
+        Check out the <a href="https://apps.sandstorm.io">Sandstorm App Market</a> for more apps!
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      function fixHref() {
+        document.getElementById("oasis-install").href = "https://oasis.sandstorm.io/install/SPK_PACKAGE_ID?url=" + window.location.origin + "/SPK_PACKAGE_NAME";
+      }
+      if (document.readyState === "complete") {
+        fixHref();
+      } else {
+        document.addEventListener("DOMContentLoaded", fixHref);
+      }
+    </script>
+  </body>
+</html>
